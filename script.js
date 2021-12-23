@@ -1,6 +1,12 @@
 const textoTarefa = document.getElementById('texto-tarefa');
 const criarTarefa = document.getElementById('criar-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
+// teste
+const completedLine = document.querySelector('ol');
+const completedLiner = document.querySelector('ol');
+function salvarTarefas() {
+  localStorage.setItem('listaSalva', JSON.stringify(completedLiner.innerHTML));
+}
 criarTarefa.onclick = function click() {
   const lista = document.createElement('li');
   lista.className = 'lista';
@@ -17,8 +23,9 @@ function doisClick(event) {
   if (event.target.tagName === 'LI') {
     event.target.classList.toggle('completed');
   }
+  salvarTarefas();
 }
-const completedLine = document.querySelector('ol');
+
 completedLine.addEventListener('dblclick', doisClick);
 // inpirei no projeto anterior, mesmo codigo
 function limpa() {
@@ -27,6 +34,7 @@ function limpa() {
   for (let i = 0; i < lista.length; i += 1) {
     lista[i].remove();
   }
+  salvarTarefas();
 }
 //
 // inpirei no projeto anterior, mesmo codigo
@@ -36,6 +44,7 @@ function removerFinalizados() {
   for (let i = 0; i < completed.length; i += 1) {
     completed[i].remove();
   }
+  salvarTarefas();
 }
 // the link was changed https://stackoverflow.com/questions/70456341/click-event-only-works-on-the-second-click (new link)
 // https://stackoverflow.com/questions/70456341/how-can-i-make-my-function-that-change-the-classname-when-i-click-works
@@ -53,6 +62,7 @@ function umClick(event) {
     });
   });
   // }
+  salvarTarefas();
 }
 completedLine.addEventListener('mousedown', umClick);
 function removeSelected() {
@@ -61,10 +71,13 @@ function removeSelected() {
   for (let i = 0; i < listaSelected.length; i += 1) {
     listaSelected[i].remove();
   }
+  salvarTarefas();
 }
 // limpar lint
 window.onload = function unNameFunc() {
+  completedLiner.innerHTML = JSON.parse(localStorage.getItem('listaSalva'));
   limpa();
   removeSelected();
   removerFinalizados();
+  salvarTarefas();
 };
