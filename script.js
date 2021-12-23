@@ -37,6 +37,7 @@ function removerFinalizados() {
     completed[i].remove();
   }
 }
+// the link was changed https://stackoverflow.com/questions/70456341/click-event-only-works-on-the-second-click (new link)
 // https://stackoverflow.com/questions/70456341/how-can-i-make-my-function-that-change-the-classname-when-i-click-works
 function umClick(event) {
   // if (event.target.tagName === 'LI') {
