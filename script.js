@@ -37,19 +37,23 @@ function removerFinalizados() {
     completed[i].remove();
   }
 }
-// const completedLine = document.querySelector('ol');
+// https://stackoverflow.com/questions/70456341/how-can-i-make-my-function-that-change-the-classname-when-i-click-works
 function umClick(event) {
-  if (event.target.tagName === 'LI') {
-    const listas = document.querySelectorAll('.lista');
-    listas.forEach((i) => {
-      i.addEventListener('click', function semNomeDois() {
-        listas.forEach((j) => j.classList.remove('selected'));
-        this.classList.add('selected');
+  // if (event.target.tagName === 'LI') {
+  const listas = document.querySelectorAll('.lista');
+  listas.forEach((i) => {
+    i.addEventListener('click', function semNomeDois() {
+      listas.forEach((j) => {
+        if (j !== event.target) {
+          j.classList.remove('selected');
+        }
       });
+      this.classList.add('selected');
     });
-  }
+  });
+  // }
 }
-completedLine.addEventListener('click', umClick);
+completedLine.addEventListener('mousedown', umClick);
 function removeSelected() {
   // teste
   const listaSelected = document.querySelectorAll('.selected');
