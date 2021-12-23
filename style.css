@@ -1,10 +1,10 @@
-li:focus {
+/* li:focus {
   background-color: gray;
 }
 
 #linha:hover {
   background-color: gray;
-}
+} */
 
 .completed {
   text-decoration: line-through solid black;
