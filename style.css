@@ -10,7 +10,7 @@ h1 {
   text-align: center;
 }
 
-h2#funcionamento {
+#funcionamento {
   color: gray;
   font-weight: 100;
   text-align: center;
@@ -19,7 +19,7 @@ h2#funcionamento {
   margin-top: -15px;
 }
 
-input#texto-tarefa {
+#texto-tarefa {
   width: 79%;
   height: 23px;
 }
@@ -31,7 +31,7 @@ button {
   border-radius: 80px;
 }
 
-button#criar-tarefa {
+#criar-tarefa {
   width: 20%;
   border-radius: 0;
   height: 29px;
@@ -61,9 +61,9 @@ button#criar-tarefa {
 }
 
 #apaga-tudo {
-    background: rgb(255 52 0);
-    border: 1px solid rgb(255 52 0);
-    color: white;
+  background: rgb(255 52 0);
+  border: 1px solid rgb(255 52 0);
+  color: white;
 }
 
 #remover-finalizados {
