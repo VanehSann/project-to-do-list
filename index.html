@@ -8,16 +8,20 @@
       <h1>Minha Lista de Tarefas</h1>
       <h2 id='funcionamento'>Clique duas vezes em um item para marcá-lo como completo</h2>
     </header>
+    <div>
         <input id='texto-tarefa' type="text"/>
         <button id='criar-tarefa' type="submit" onClick='click()'>Adicionar</button>
+    </div>
         <ol id='lista-tarefas'> 
         </ol>
-      <button id='mover-cima' type="submit" onClick='moverCima()'>Mover Para Cima</button>
+    <div style="position: absolute;bottom: 5px;width: 99%;">
+       <button id='mover-cima' type="submit" onClick='moverCima()'>Mover Para Cima</button>
         <button id='mover-baixo' type="submit" onClick='moverBaixo()'>Mover Para Baixo</button>
         <button id='apaga-tudo' type="submit" onClick='limpa()'>Apagar Tudo</button>
         <button id='remover-finalizados' type="submit" onClick='removerFinalizados()'>Remover Finalizados</button>
         <button id='salvar-tarefas' type="submit" onClick='salvarTarefas()'>Salvar Tarefas</button>
         <button id='remover-selecionado' type="submit" onClick='removeSelected()'>Remove Selecionados</button>
+      </div>
         <script src="script.js"></script>
   </body>
 </html>
